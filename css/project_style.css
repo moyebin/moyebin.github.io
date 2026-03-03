@@ -1,0 +1,242 @@
+/* 목업 랩 */
+.mockup-wrap.project-mockup{
+  position: relative;
+  width: 600px;
+  margin: 0 auto;
+  transform: translate(15px, -70px);
+}
+
+.mockup-wrap2.project-mockup2{
+  position: relative;
+  width: 600px;
+  margin: 0 auto;
+  transform: translate(0px, -70px);
+}
+
+/* 공통 */
+.device{ position: relative; }
+
+.device-frame{
+  display:block;
+  width:100%;
+  height:auto;
+}
+
+/* 노트북 */
+.mockup-wrap.project-mockup .device--monitor{
+  width: 599px;
+}
+
+/* 노트북 화면 */
+.device-screen--monitor{
+  position:absolute;
+  top:52px;
+  left:76px;
+  width:445px;
+  height:280px;
+
+  overflow-y:auto;
+  overflow-x:hidden;
+  background:#fff;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ======================
+   폰 (위치/크기 유지)
+====================== */
+.mockup-wrap.project-mockup .device--phone{
+  position:absolute;
+  right:449px;   
+  bottom:-5px;
+  width:250px;  
+  z-index: 10; 
+  border-radius: 30px;
+}
+
+.device-screen--phone{
+  position:absolute;
+  right: 73px;
+  bottom: 21px;
+  width: 104px;
+  height: 208px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background:#fff;
+  border-radius: 12px;
+
+  /* ⭐ 스크롤은 되지만 스크롤바 숨기기 */
+  scrollbar-width: none;      
+  -ms-overflow-style: none;  
+}
+
+/* 프레임이 화면 위로 올라오게 */
+.device--phone .device-frame{
+  position: relative;
+}
+
+/* 스크린 이미지 */
+.device-screen .screen-shot{
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+/* 스크롤바 */
+.device-screen::-webkit-scrollbar{ width:4px; }
+.device-screen::-webkit-scrollbar-thumb{
+  background:#5078b9;;
+  border-radius:999px;
+}
+
+/* 마우스 아이콘 */
+.scroll-indicator{
+  position: absolute;
+  left: 10px;
+  top: 40%;
+  transform: translateY(-50%);
+  z-index: 20;
+  animation: floatMouse 1.8s ease-in-out infinite;
+}
+@keyframes floatMouse{
+  0%{ transform: translateY(-50%) translateY(0); }
+  50%{ transform: translateY(-50%) translateY(20px); }
+  100%{ transform: translateY(-50%) translateY(0); }
+}
+
+.scroll-indicator img{
+  width: 50px; 
+  height: auto;
+  filter: brightness(0) invert(60%);
+  transition: filter 0.3s ease;
+}
+
+/* ===== 아래 텍스트 영역 ===== */
+.project-body{
+  width: 100%;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0 16px;
+  transform: translateY(-60px);
+}
+
+.tags{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.tag{
+  font-size: 13px;
+  background: #d3e3fdb2;
+  color: #444456;
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.title{
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.period{
+  margin: 0 0 10px;
+  color: #666;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.desc{
+  margin: 0 0 15px;
+  color: #333;
+  line-height: 1.7;
+  max-width: 680px;
+  font-size: 15px;
+}
+
+.btns{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 42px;
+  padding: 0 16px;
+  border-radius: 15px;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 14px;
+}
+
+.btn-dark{ background: #5e5e5e; color: #fff; }
+.btn-dark:hover{ background-color: #373737;}
+.btn-dark span{padding-left: 5px;}
+
+.btn-teal{ background: #5078b9; color: #fff; }
+.btn-teal:hover{ background-color: #2f466c; }
+.btn-teal span{ padding-left: 5px; }
+
+/* ===== 모바일 대응 ===== */
+@media (max-width: 900px){
+  .project-section{ padding: 0 24px; } 
+  .project-hero{ min-height: 320px; }
+}
+
+
+
+/* ===== 섹션 전체 ===== */
+.project-section{
+  position: relative;
+  padding: 0 120px;
+  overflow: hidden;
+}
+.projectSwiper{
+  position: relative;
+  overflow: hidden;  /* 옆 슬라이드 안 비치게 */
+}
+
+.project-section { overflow: hidden; }
+
+/* ===== 슬라이드 레이아웃: 위(목업) / 아래(텍스트) ===== */
+.project-slide{
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  padding: 24px 0 0;
+}
+
+/* ===== 위 목업 영역 ===== */
+.project-hero{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: visible; 
+  min-height: 420px;
+}
+
+/* 기본 점 크기 */
+.projectSwiper .swiper-pagination-bullet {
+  width: 15px;
+  height: 15px;
+  background: #d0e2ff;
+  opacity: 1;
+}
+
+/* 활성화된 점 */
+.projectSwiper .swiper-pagination-bullet-active {
+  background: #5078b9;
+  transform: scale(1.2);
+}
+
+.projectSwiper .swiper-pagination {
+  position: absolute;
+  left: 50%;
+  bottom: 200px;
+}
