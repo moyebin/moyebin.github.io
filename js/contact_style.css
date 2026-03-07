@@ -1,0 +1,685 @@
+.co_contact_window{
+  width: 100%;
+  max-width: 1100px;
+  animation: fadeInUp 1s;
+}
+
+.co_window:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 22px 50px rgba(0,0,0,0.12);
+}
+
+/* 윈도우 탑 부분 */
+.main_windowbar{
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 2.0625rem;
+  width: 100%;
+  background: #B0D0F0;
+  border-radius: 10px 10px 0 0;
+}
+
+.main_windowbar::before{
+  content: "";
+  position: absolute;
+  left: 1.25rem;
+  top: .55rem;
+  width: 2.93rem;
+  height: 1rem;
+  background: url(/img/about_peofile_icon.svg) no-repeat;
+}
+
+.winbar_tit{
+  width: 100%;
+  text-align: center;
+  line-height: 2.0625rem;
+  font-weight: 600;
+  color: #444746;
+}
+
+/* 윈도우 중간부분 카드배경 */
+.contact_body{
+  background: #d3e3fdb2;
+  border-radius: 0 0 10px 10px;
+  padding: 18px;
+  display: grid;
+  gap: 18px;
+}
+
+/* =========================================================
+   INTRO
+========================================================= */
+.contact_title{
+  margin: 6px 0 0;
+  font-size: 24px;
+  font-weight: 900;
+  color: #2b6cb0;
+}
+
+.contact_desc{
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.55;
+  color: #51525e;
+}
+
+/* =========================================================
+   CONTACT CARDS (2 items)
+========================================================= */
+.contact_grid{
+  display: grid;
+  gap: 14px;
+}
+
+/* 2개 카드일 때 */
+.contact_grid_2{
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (max-width: 900px){
+  .contact_grid_2{ grid-template-columns: 1fr; }
+}
+
+.contact_card{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  text-decoration: none;
+
+  background: rgba(255,255,255,0.92);
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 16px;
+
+  box-shadow: 0 12px 26px rgba(0,0,0,0.06);
+  transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+}
+
+.contact_card:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.10);
+  background: rgba(255,255,255,0.98);
+}
+
+.contact_icon{
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+  background: rgba(176,208,240,0.45);
+  font-size: 18px;
+  flex: 0 0 auto;
+}
+
+.contact_meta{
+  flex: 1;
+  min-width: 0;
+}
+
+.contact_label{
+  margin: 0 0 4px;
+  font-size: 12px;
+  font-weight: 900;
+  color: #355c7d;
+  letter-spacing: .2px;
+}
+
+.contact_value{
+  margin: 0;
+  font-size: 14px;
+  font-weight: 800;
+  color: #1f2937;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.contact_arrow{
+  font-weight: 900;
+  color: #2b6cb0;
+  flex: 0 0 auto;
+}
+
+/* =========================================================
+   FORM BOX
+========================================================= */
+.contact_form_box{
+  background: rgba(255,255,255,0.95);
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 26px rgba(0,0,0,0.06);
+}
+
+/* mini windowbar (UI showcase 톤 재사용) */
+.mini_windowbar{
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.mini_windowbar::before{
+  content:"";
+  position:absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 47px;
+  height: 16px;
+  background-image:
+    radial-gradient(circle at 8px 8px, #2F6BFF 0 5px, transparent 6px),
+    radial-gradient(circle at 23.5px 8px, #2FA8FF 0 5px, transparent 6px),
+    radial-gradient(circle at 39px 8px, #1FC7DA 0 5px, transparent 6px);
+}
+
+.mini_winbar_tit{
+  font-size: 15px;
+  font-weight: 800;
+  color: #2b6cb0;
+}
+
+.contact_form{
+  padding: 16px;
+}
+
+.form_2col{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+@media (max-width: 900px){
+  .form_2col{ grid-template-columns: 1fr; }
+}
+
+.form_row{
+  display: grid;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.form_label{
+  font-size: 12px;
+  font-weight: 900;
+  color: #355c7d;
+}
+
+.form_input,
+.form_textarea{
+  border-radius: 12px;
+  border: 1px solid rgba(58, 141, 255, 0.18);
+  background: rgba(176, 208, 240, 0.18);
+  padding: 12px;
+  outline: none;
+  font-size: 14px;
+  color: #1f2937;
+  transition: background .18s ease, border-color .18s ease, transform .18s ease;
+}
+
+.form_textarea{
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form_input:focus,
+.form_textarea:focus{
+  background: rgba(176, 208, 240, 0.28);
+  border-color: rgba(47, 107, 255, 0.35);
+}
+
+.form_actions{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.form_btn{
+  border: 0;
+  cursor: pointer;
+  padding: 12px 16px;
+  border-radius: 999px;
+  background: #346ea8;
+  color: #fff;
+  font-weight: 900;
+  box-shadow: 0 10px 22px rgba(52,110,168,.28);
+  transition: transform .18s ease, box-shadow .18s ease, opacity .18s ease;
+}
+
+.form_btn:hover{
+  background: #264f79;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(52,110,168,.34);
+}
+
+.form_hint{
+  margin: 0;
+  font-size: 12px;
+  color: #51525e;
+  opacity: .9;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+.contact_footer{
+  margin: 0;
+  text-align: center;
+  font-size: 12px;
+  color: #51525e;
+  opacity: .9;
+}
+
+/* =========================================================
+   (선택) 메인 다크 켜져도 CONTACT 윈도우 글자 깨지지 않게
+   - 메인 다크가 html.is-dark / body.dark / body.is-dark 중 뭐든 대비
+========================================================= */
+html.is-dark .co_contact_window .contact_body,
+body.dark .co_contact_window .contact_body,
+body.is-dark .co_contact_window .contact_body{
+  background: rgba(31, 42, 68, 0.35);
+}
+
+
+/* 다크모드 상단바 제목 */
+html.is-dark .winbar_tit{
+  color:#f1f5f9
+}
+
+html.is-dark .co_contact_window .contact_desc,
+body.dark .co_contact_window .contact_desc,
+body.is-dark .co_contact_window .contact_desc{
+  color: #d7e1ee;
+}
+
+html.is-dark .co_contact_window .contact_card,
+body.dark .co_contact_window .contact_card,
+body.is-dark .co_contact_window .contact_card,
+html.is-dark .co_contact_window .contact_form_box,
+body.dark .co_contact_window .contact_form_box,
+body.is-dark .co_contact_window .contact_form_box{
+  background: #1e293b;
+  border-color: rgba(255,255,255,0.12);
+}
+
+html.is-dark .co_contact_window .contact_value,
+body.dark .co_contact_window .contact_value,
+body.is-dark .co_contact_window .contact_value{
+  color: #eaf0ff;
+}
+
+html.is-dark .co_contact_window .form_input,
+html.is-dark .co_contact_window .form_textarea,
+body.dark .co_contact_window .form_input,
+body.dark .co_contact_window .form_textarea,
+body.is-dark .co_contact_window .form_input,
+body.is-dark .co_contact_window .form_textarea{
+  background: rgba(255,255,255,0.06);
+  color: #eaf0ff;
+  border-color: rgba(255,255,255,0.14);
+}
+
+html.is-dark .co_contact_window .form_hint,
+html.is-dark .co_contact_window .contact_footer,
+body.dark .co_contact_window .form_hint,
+body.dark .co_contact_window .contact_footer,
+body.is-dark .co_contact_window .form_hint,
+body.is-dark .co_contact_window .contact_footer{
+  color: #d7e1ee;
+}
+
+html.is-dark .form_input,
+html.is-dark .form_textarea{
+  background:#1e293b;
+  border:1px solid #334155;
+  color:#f1f5f9;
+}
+
+html.is-dark .form_input::placeholder,
+html.is-dark .form_textarea::placeholder{
+  color:#94a3b8;
+}
+
+html.is-dark .contact_card{
+  background:#1e293b;
+  border:1px solid #334155;
+}
+
+html.is-dark .contact_card:hover{
+  background:#263449;
+  transform: translateY(-2px);
+}
+
+html.is-dark .form_btn{
+  background:linear-gradient(135deg,#2364a6,#214568);
+  color:white;
+}
+
+html.is-dark .form_btn:hover{
+  background:linear-gradient(135deg,#2563eb,#1d4ed8);
+}
+
+html.is-dark .main_windowbar{
+  background:#1e293b;
+}
+
+/* CONTACT 폼 내부 텍스트 다크모드 색상 수정 */
+
+html.is-dark .co_contact_window .form_label{
+  color: #cbd5e1;
+}
+
+html.is-dark .co_contact_window .form_hint{
+  color: #cbd5e1;
+}
+
+html.is-dark .co_contact_window .contact_label{
+  color: #2b6cb0;
+}
+
+/* 테블릿 반응형 */
+@media (max-width: 1024px){
+  .co_contact_window{
+    max-width: 100%;
+  }
+
+  .contact_body{
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .contact_title{
+    font-size: 21px;
+  }
+
+  .contact_desc{
+    font-size: 13px;
+    line-height: 1.55;
+  }
+
+  .contact_grid{
+    gap: 12px;
+  }
+
+  .contact_card{
+    padding: 13px;
+    gap: 10px;
+  }
+
+  .contact_icon{
+    width: 42px;
+    height: 42px;
+    font-size: 17px;
+  }
+
+  .contact_label{
+    font-size: 11px;
+  }
+
+  .contact_value{
+    font-size: 13px;
+  }
+
+  .contact_form{
+    padding: 14px;
+  }
+
+  .form_2col{
+    gap: 10px;
+  }
+
+  .form_input,
+  .form_textarea{
+    font-size: 13px;
+    padding: 11px 12px;
+  }
+
+  .form_btn{
+    padding: 11px 14px;
+    font-size: 13px;
+  }
+
+  .form_hint{
+    font-size: 11px;
+  }
+}
+
+/* 모바일 반응형 */
+@media (max-width: 768px){
+  .co_contact_window{
+    max-width: 100%;
+  }
+
+  .main_windowbar{
+    height: 2rem;
+  }
+
+  .main_windowbar::before{
+    left: 1rem;
+    top: .52rem;
+    transform: scale(.92);
+    transform-origin: left top;
+  }
+
+  .winbar_tit{
+    font-size: .95rem;
+    line-height: 2rem;
+  }
+
+  .contact_body{
+    padding: 12px;
+    gap: 14px;
+  }
+
+  .contact_title{
+    font-size: 19px;
+    line-height: 1.3;
+  }
+
+  .contact_desc{
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .contact_grid,
+  .contact_grid_2{
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .contact_card{
+    padding: 12px;
+    border-radius: 14px;
+  }
+
+  .contact_icon{
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    font-size: 16px;
+  }
+
+  .contact_value{
+    font-size: 13px;
+  }
+
+  .contact_arrow{
+    font-size: 14px;
+  }
+
+  .contact_form_box{
+    border-radius: 14px;
+  }
+
+  .mini_windowbar{
+    height: 32px;
+  }
+
+  .mini_windowbar::before{
+    left: 12px;
+    transform: translateY(-50%) scale(.9);
+    transform-origin: left center;
+  }
+
+  .mini_winbar_tit{
+    font-size: 14px;
+  }
+
+  .contact_form{
+    padding: 13px;
+  }
+
+  .form_2col{
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .form_row{
+    margin-bottom: 11px;
+  }
+
+  .form_label{
+    font-size: 11px;
+  }
+
+  .form_input,
+  .form_textarea{
+    font-size: 13px;
+    padding: 11px;
+    border-radius: 11px;
+  }
+
+  .form_textarea{
+    min-height: 110px;
+  }
+
+  .form_actions{
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .form_btn{
+    width: 100%;
+    height: 42px;
+    padding: 0 12px;
+    font-size: 13px;
+  }
+
+  .form_hint{
+    text-align: center;
+    font-size: 11px;
+    line-height: 1.4;
+  }
+
+  .contact_footer{
+    font-size: 11px;
+  }
+}
+
+/* 스몰모바일 반응형 */
+@media (max-width: 480px){
+  .main_windowbar{
+    height: 1.9rem;
+  }
+
+  .main_windowbar::before{
+    left: .9rem;
+    top: .5rem;
+    transform: scale(.84);
+    transform-origin: left top;
+  }
+
+  .winbar_tit{
+    font-size: .9rem;
+    line-height: 1.9rem;
+  }
+
+  .contact_body{
+    padding: 10px;
+    gap: 12px;
+  }
+
+  .contact_title{
+    font-size: 17px;
+  }
+
+  .contact_desc{
+    font-size: 12px;
+    line-height: 1.55;
+  }
+
+  .contact_card{
+    padding: 11px;
+    gap: 9px;
+  }
+
+  .contact_icon{
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+  }
+
+  .contact_label{
+    font-size: 10px;
+  }
+
+  .contact_value{
+    font-size: 12px;
+  }
+
+  .mini_windowbar{
+    height: 30px;
+  }
+
+  .mini_windowbar::before{
+    left: 10px;
+    transform: translateY(-50%) scale(.82);
+    transform-origin: left center;
+  }
+
+  .mini_winbar_tit{
+    font-size: 13px;
+  }
+
+  .contact_form{
+    padding: 12px;
+  }
+
+  .form_label{
+    font-size: 10px;
+  }
+
+  .form_input,
+  .form_textarea{
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  .form_textarea{
+    min-height: 96px;
+  }
+
+  .form_btn{
+    height: 40px;
+    font-size: 12px;
+    border-radius: 999px;
+  }
+
+  .form_hint{
+    font-size: 10px;
+  }
+
+  .contact_footer{
+    font-size: 10px;
+  }
+}
